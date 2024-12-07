@@ -1,4 +1,4 @@
-package org.example.springbatchtemplate.domain.example1.job;
+package org.example.springbatchtemplate.domain.example1.config;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

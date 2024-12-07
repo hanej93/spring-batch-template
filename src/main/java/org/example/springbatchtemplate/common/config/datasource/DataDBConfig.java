@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableJpaRepositories(
-	basePackages = "org.example.springbatchtemplate.domain",
+	basePackages = "org.example.springbatchtemplate",
 	entityManagerFactoryRef = "dataEntityManager",
 	transactionManagerRef = "dataTransactionManager"
 )
@@ -33,7 +33,7 @@ public class DataDBConfig {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 
 		em.setDataSource(dataDBSource());
-		em.setPackagesToScan("org.example.springbatchtemplate.domain");
+		em.setPackagesToScan("org.example.springbatchtemplate");
 		em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
 		HashMap<String, Object> properties = new HashMap<>();
