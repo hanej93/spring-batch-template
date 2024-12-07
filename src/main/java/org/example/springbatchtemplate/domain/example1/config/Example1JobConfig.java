@@ -7,16 +7,14 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import lombok.RequiredArgsConstructor;
+
 @Configuration
+@RequiredArgsConstructor
 public class Example1JobConfig {
 
 	private final JobRepository jobRepository;
 	private final Step example1Step;
-
-	public Example1JobConfig(JobRepository jobRepository, Step example1Step) {
-		this.jobRepository = jobRepository;
-		this.example1Step = example1Step;
-	}
 
 	@Bean
 	public Job example1Job() {

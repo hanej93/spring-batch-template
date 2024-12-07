@@ -1,14 +1,18 @@
 package org.example.springbatchtemplate.domain.example1.step.processor;
 
+import org.example.springbatchtemplate.api.dto.MockApiResponse;
+import org.example.springbatchtemplate.domain.example1.entity.Example1Entity;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Example1Processor implements ItemProcessor<String, String> {
+public class Example1Processor implements ItemProcessor<MockApiResponse, Example1Entity> {
 
 	@Override
-	public String process(String item) {
-		// 데이터를 대문자로 변환하는 간단한 처리 로직
-		return item.toUpperCase();
+	public Example1Entity process(MockApiResponse item) {
+		return Example1Entity.builder()
+			.name(item.getName())
+			.value(item.getValue())
+			.build();
 	}
 }
